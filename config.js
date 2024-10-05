@@ -18,6 +18,10 @@ module.exports = {
     sidebarCondition2: '#accordion_content > div > div:nth-child(2) > div > div.selectWrapper__da4764db > select > option[value="72"]',
     sidebarCondition3: '#accordion_content > div > div.merFormGroup.mer-spacing-b-16 > div > label:nth-child(8)',
     dropdownBooksMagazine: '#accordion_content > div > div:nth-child(1) > div > div.selectWrapper__da4764db > select',
+    // Add these selectors
+    categoryDropdown1: '#accordion_content > div > div:nth-child(1) > div > div.selectWrapper__da4764db > select',
+    categoryDropdown2: '#accordion_content > div > div:nth-child(2) > div > div.selectWrapper__da4764db > select',
+    computerITCheckbox: '#accordion_content > div > div.merFormGroup.mer-spacing-b-16 > div > label:nth-child(8) > input',
 
   },
   timeouts: {

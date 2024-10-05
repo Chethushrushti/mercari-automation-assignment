@@ -117,23 +117,25 @@ async function verifySelectedValue(page, selector, expectedValue, itemName) {
     console.log('21. Navigated to the search results page successfully.');
     // await page.waitForTimeout(500); 
 
-    // Step 16: Verify that "本・雑誌・漫画" is selected in the dropdown
-    await verifySelectedValue(page, '#accordion_content > div > div:nth-child(1) > div > div.selectWrapper__da4764db > select', '5', '本・雑誌・漫画');
-    // await page.waitForTimeout(500); 
+   // Step 16: Verify that "本・雑誌・漫画" is selected in the dropdown
+await verifySelectedValue(page, config.selectors.categoryDropdown1, '5', '本・雑誌・漫画');
+await page.waitForTimeout(2000); // Wait 2 seconds to verify
 
-    // Step 17: Verify that "本" is selected in the dropdown
-    await verifySelectedValue(page, '#accordion_content > div > div:nth-child(2) > div > div.selectWrapper__da4764db > select', '72', '本');
-    // await page.waitForTimeout(500); 
+// Step 17: Verify that "本" is selected in the dropdown
+await verifySelectedValue(page, config.selectors.categoryDropdown2, '72', '本');
+await page.waitForTimeout(2000); // Wait 2 seconds to verify
 
-    // Step 18: Verify that "コンピュータ・IT" is selected (checked)
-    const checkboxSelector = '#accordion_content > div > div.merFormGroup.mer-spacing-b-16 > div > label:nth-child(8) > input';
-    await page.waitForSelector(checkboxSelector, { timeout: config.timeouts.selector });
-    const isChecked = await page.$eval(checkboxSelector, checkbox => checkbox.checked);
-    if (isChecked) {
-      console.log('23. Verified that "コンピュータ・IT" is selected (checked) correctly.');
-    } else {
-      console.error(' The checkbox for "コンピュータ・IT" is not checked.');
-    }
+// Step 18: Verify that "コンピュータ・IT" is selected (checked)
+const checkboxSelector = config.selectors.computerITCheckbox;
+await page.waitForSelector(checkboxSelector, { timeout: config.timeouts.selector });
+const isChecked = await page.$eval(checkboxSelector, checkbox => checkbox.checked);
+if (isChecked) {
+  console.log('Verified that "コンピュータ・IT" is selected (checked) correctly.');
+} else {
+  console.error('The checkbox for "コンピュータ・IT" is not checked.');
+}
+await page.waitForTimeout(3000); // Wait 3 seconds to verify
+
 
     // Step 19: Go back to the Mercari top page
     await navigateTo(page, config.urls.mercariHome, '24. Navigated back to the Mercari homepage successfully.');
