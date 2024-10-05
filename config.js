@@ -17,10 +17,12 @@ module.exports = {
     sidebarCondition1: '#accordion_content > div > div:nth-child(1) > div > div.selectWrapper__da4764db > select > option[value="5"]',
     sidebarCondition2: '#accordion_content > div > div:nth-child(2) > div > div.selectWrapper__da4764db > select > option[value="72"]',
     sidebarCondition3: '#accordion_content > div > div.merFormGroup.mer-spacing-b-16 > div > label:nth-child(8)',
+    dropdownBooksMagazine: '#accordion_content > div > div:nth-child(1) > div > div.selectWrapper__da4764db > select',
+
   },
   timeouts: {
-    navigation: 60000,
-    selector: 30000,
-    stabilization: 5000,
+    navigation: 120000,
+    selector: 60000,
+    stabilization: 10000,
   },
 };
