@@ -224,7 +224,7 @@ try {
   return; // Exit if the action fails
 }
 
-// Step 14 : Verify that the latest browsing history is showing correctly
+// Step 22 : Verify that the latest browsing history is showing correctly
 try {
   const browsingHistorySelector = config.selectors.browsingHistoryItem; // Assuming the browsing history items have the same selector
   // Wait for the browsing history section to be available
@@ -238,7 +238,7 @@ try {
     'ビジネス・経済'
   ];
 
-  // Verify each browsing history item matches the expected value
+  // Step 23 : Verify each browsing history item matches the expected value
   let verificationPassed = true;
   for (let i = 0; i < expectedHistory.length; i++) {
     const historyText = await historyItems[i].textContent();
